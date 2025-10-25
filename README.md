@@ -37,25 +37,4 @@ Flask
 
 RESTful API Design
 
-
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
 SQLite / MySQL / PostgreSQL (depending on the project)

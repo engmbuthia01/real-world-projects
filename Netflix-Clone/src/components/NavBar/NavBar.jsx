@@ -17,7 +17,7 @@ const NavBar = () => {
           <li>Movies</li>
           <li>New & Popular</li>
           <li>My List</li>
-          <li>Brouse by Languages</li>
+          <li>Browse by Languages</li>
         </ul>
       </div>
       <div className="navbar-right">

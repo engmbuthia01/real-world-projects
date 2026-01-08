@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCR-NLiQqGUuv6auFlZoqlpGyu426xkUqY",
@@ -14,3 +14,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+const signup = async (name, email, password) => {
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(
+      collection(db, "user", {
+        uid: user.uid,
+        name,
+        authProvider: "local",
+        email,
+      })
+    );
+  } catch (error) {
+    console.log(error);
+    alert(error);
+  }
+};

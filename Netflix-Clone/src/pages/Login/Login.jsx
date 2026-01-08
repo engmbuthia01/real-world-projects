@@ -9,7 +9,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const user_auth = async () => {
+  const user_auth = async (event) => {
+    event.preventDefault();
     if (signState === "Sign In") {
       await login(email, password);
     } else {
@@ -26,7 +27,7 @@ const Login = () => {
             <input
               value={name}
               onChange={(e) => {
-                e.target.value;
+                setName(e.target.value);
               }}
               type="text"
               placeholder="Your Name"
@@ -37,7 +38,7 @@ const Login = () => {
           <input
             value={email}
             onChange={(e) => {
-              e.target.value;
+              setEmail(e.target.value);
             }}
             type="email"
             placeholder="Email"
@@ -45,7 +46,7 @@ const Login = () => {
           <input
             value={password}
             onChange={(e) => {
-              e.target.value;
+              setPassword(e.target.value);
             }}
             type="password"
             placeholder="Password"

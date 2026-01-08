@@ -1,0 +1,16 @@
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCR-NLiQqGUuv6auFlZoqlpGyu426xkUqY",
+  authDomain: "netflix-clone-db116.firebaseapp.com",
+  projectId: "netflix-clone-db116",
+  storageBucket: "netflix-clone-db116.firebasestorage.app",
+  messagingSenderId: "970661942636",
+  appId: "1:970661942636:web:7113b4162c7b7da01a4f49",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);

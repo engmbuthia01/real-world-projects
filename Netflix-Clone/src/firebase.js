@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
@@ -43,3 +44,9 @@ const login = async (email, password) => {
     alert(error);
   }
 };
+
+const logout = () => {
+  signOut(auth);
+};
+
+export { auth, db, login, signup, logout };

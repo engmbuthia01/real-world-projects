@@ -50,7 +50,9 @@ const Login = () => {
             type="password"
             placeholder="Password"
           />
-          <button>{signState}</button>
+          <button onClick={user_auth} type="submit">
+            {signState}
+          </button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />

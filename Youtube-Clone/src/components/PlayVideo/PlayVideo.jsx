@@ -9,6 +9,20 @@ import jack from "../../assets/jack.png";
 import user_profile from "../../assets/user_profile.jpg";
 
 const PlayVideo = ({ videoId }) => {
+
+  const [apiData, setApiData] = useState(null);
+
+  const fetchVideoData = async() => {
+    // Fetching Videos Data
+    const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}=${API_KEY}`;
+    await fetch(videoDetails_url).then(res=>res.json()).then(data => setApiData(dat.items[0])
+  }
+
+  useEffect(() => {
+    fetchVideoData();
+  }, [])
+  
+
   return (
     <div className="play-video">
       {/* <video src={video1} controls autoPlay muted></video> */}

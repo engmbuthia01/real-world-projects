@@ -8,10 +8,17 @@ import save from "../../assets/save.png";
 import jack from "../../assets/jack.png";
 import user_profile from "../../assets/user_profile.jpg";
 
-const PlayVideo = () => {
+const PlayVideo = ({ videoId }) => {
   return (
     <div className="play-video">
-      <video src={video1} controls autoPlay muted></video>
+      {/* <video src={video1} controls autoPlay muted></video> */}
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
       <h3>Best YouTube Channel To Learn Web Development</h3>
       <div className="play-video-info">
         <p>15225 Views &bull; 2 days ago</p>
@@ -72,7 +79,7 @@ const PlayVideo = () => {
               Jack Nicholson <span>1 day ago</span>
             </h3>
             <p>
-              A gloabl computer network providing a variety of information and
+              A global computer network providing a variety of information and
               of interconnected networks using standardized communication
               protocols.
             </p>

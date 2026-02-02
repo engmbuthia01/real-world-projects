@@ -33,11 +33,9 @@ const Feed = ({ category }) => {
             className="card"
           >
             <img src={item.snippet.thumbnails.medium.url} alt="" />
-            <h2>
-              Best channel to learn coding that help you to be a web developer
-            </h2>
-            <h3>Greatstack</h3>
-            <p>15k views &bull; 2 days ago</p>
+            <h2>{item.snippet.title}</h2>
+            <h3>{item.snippet.channelTitle}</h3>
+            <p>{item.statistics.viewCount} views &bull; 2 days ago</p>
           </Link>
         );
       })}

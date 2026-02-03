@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./PlayVideo.css";
 import video1 from "../../assets/video.mp4";
 import like from "../../assets/like.png";
@@ -9,19 +9,19 @@ import jack from "../../assets/jack.png";
 import user_profile from "../../assets/user_profile.jpg";
 
 const PlayVideo = ({ videoId }) => {
-
   const [apiData, setApiData] = useState(null);
 
-  const fetchVideoData = async() => {
+  const fetchVideoData = async () => {
     // Fetching Videos Data
     const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}=${API_KEY}`;
-    await fetch(videoDetails_url).then(res=>res.json()).then(data => setApiData(dat.items[0])
-  }
+    await fetch(videoDetails_url)
+      .then((res) => res.json())
+      .then((data) => setApiData(data.items[0]));
+  };
 
   useEffect(() => {
     fetchVideoData();
-  }, [])
-  
+  }, []);
 
   return (
     <div className="play-video">
@@ -33,7 +33,7 @@ const PlayVideo = ({ videoId }) => {
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      <h3>Best YouTube Channel To Learn Web Development</h3>
+      <h3>{apiData ? apiData.snippet.title : "Title Here"}</h3>
       <div className="play-video-info">
         <p>15225 Views &bull; 2 days ago</p>
         <div>

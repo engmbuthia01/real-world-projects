@@ -7,7 +7,7 @@ import search_icon_dark from "../../assets/search-b.png";
 import toogle_light from "../../assets/night.png";
 import toogle_dark from "../../assets/day.png";
 
-const NavBar = () => {
+const NavBar = ({ theme, setTheme }) => {
   return (
     <div className="navbar">
       <img src={logo_light} alt="" className="logo" />

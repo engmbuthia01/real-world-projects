@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const current_theme = localStorage.getItem("current_theme");
+  const [theme, setTheme] = useState(current_theme ? current_theme : "light");
   return (
-    <div className="container">
+    <div className={`container ${theme}`}>
       <NavBar theme={theme} setTheme={setTheme} />
     </div>
   );

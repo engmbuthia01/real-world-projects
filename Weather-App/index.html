@@ -55,7 +55,9 @@
           data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " km/hr";
       }
-      checkWeather(city);
+      searchBtn.addEventListener("click", () => {
+        checkWeather(searchBox.value);
+      });
     </script>
   </body>
 </html>

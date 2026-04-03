@@ -29,7 +29,7 @@
 
         <div class="controls">
           <div><i class="fa-solid fa-backward"></i></div>
-          <div><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+          <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
           <div><i class="fa-solid fa-forward"></i></div>
         </div>
       </div>
@@ -47,6 +47,21 @@
         progress.max = song.duration;
         progrss.value = song.currentTime;
       }
+
+      function playPause(){
+        if(ctrlIcon.classList.contains("fa-pause")){
+          song.pause;
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        }
+        else {
+          song.play;
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      }
+
+
     </script>
 
 

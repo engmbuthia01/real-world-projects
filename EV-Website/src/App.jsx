@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Background from "./components/Background/Background";
 
 const App = () => {
   let heroData = [
@@ -10,7 +11,11 @@ const App = () => {
   const [heroCount, setHeroCount] = useState(2);
   const [playStatus, setPlayStatus] = useState(false);
 
-  return <div></div>;
+  return (
+    <div>
+      <Background playStatus={playStatus} heroCount={heroCount} />
+    </div>
+  );
 };
 
 export default App;

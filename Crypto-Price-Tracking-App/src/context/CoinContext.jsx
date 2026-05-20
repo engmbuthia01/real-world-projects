@@ -16,7 +16,7 @@ const CoinContextProvider = (props) => {
     };
 
     fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&names=Bitcoin&symbols=btc&category=layer-1&price_change_percentage=1h",
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}&ids=bitcoin&names=Bitcoin&symbols=btc&category=layer-1&price_change_percentage=1h`,
       options,
     )
       .then((res) => res.json())
@@ -26,9 +26,13 @@ const CoinContextProvider = (props) => {
 
   useEffect(() => {
     fetchAllCoin();
-  }, []);
+  }, [currency]);
 
-  const contextValue = {};
+  const contextValue = {
+    allCoin,
+    currency,
+    setCurrency,
+  };
   return (
     <coinContext.Provider value={contextValue}>
       {props.children}

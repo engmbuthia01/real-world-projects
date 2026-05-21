@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavBar.css";
 import logo from "../../assets/logo.png";
 import arrow_icon from "../../assets/arrow_icon.png";
+import { CoinContext } from "../../context/CoinContext";
 
 const NavBar = () => {
+  const { setCurrency } = useContext(CoinContext);
+
+  const currencyHandler = (event) => {
+    switch (event.target.value) {
+      case "usd": {
+        setCurrency({ name: "usd", symbol: "$" });
+        break;
+      }
+      case "eur": {
+        setCurrency({ name: "eur", symbol: "€" });
+        break;
+      }
+      case "inr": {
+        setCurrency({ name: "inr", symbol: "₹ " });
+        break;
+      }
+      default: {
+        setCurrency({ name: "inr", symbol: "₹ " });
+        break;
+      }
+    }
+  };
   return (
     <div className="navbar">
       <img src={logo} alt="" className="logo" />
@@ -14,7 +37,7 @@ const NavBar = () => {
         <li>Blog</li>
       </ul>
       <div className="nav-right">
-        <select>
+        <select onChange={currencyHandler}>
           <option value="usd">USD</option>
           <option value="euro">EURO</option>
           <option value="inr">INR</option>

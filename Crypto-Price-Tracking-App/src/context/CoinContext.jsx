@@ -9,6 +9,21 @@ const CoinContextProvider = (props) => {
     symbol: "$",
   });
 
+  const fetchAllCoin = async () => {
+    const options = {
+      method: "GET",
+      headers: { "x-cg-demo-api-key": "CG-F6g5Yy3HThVYLqEtwbsqcqXF" },
+    };
+
+    fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
+      options,
+    )
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  };
+
   const contextValue = {};
 
   return (

@@ -9,6 +9,9 @@ const Home = () => {
 
   const inputHandler = (event) => {
     setInput(event.target.value);
+    if (event.target.value === "") {
+      setDisplayCoin(allCoin);
+    }
   };
 
   const searchHandler = async (event) => {
@@ -16,6 +19,7 @@ const Home = () => {
     const coins = await allCoin.filter((item) => {
       return item.name.toLowerCase().includes(input.toLocaleLowerCase());
     });
+    setDisplayCoin(coins);
   };
 
   useEffect(() => {

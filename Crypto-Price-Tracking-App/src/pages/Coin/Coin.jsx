@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Coin.css";
 import { useParams } from "react-router-dom";
+import { CoinContext } from "../../context/CoinContext";
 
 const Coin = () => {
   const { coinId } = useParams();
-
   const [coinData, setCoinData] = useState();
+  const { currency } = useContext(CoinContext);
 
   const fetchCoinData = (async) => {
     const options = {
@@ -15,9 +16,13 @@ const Coin = () => {
 
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`, options)
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => setCoinData(res))
       .catch((err) => console.error(err));
   };
+
+  useEffect(() => {
+    fetchCoinData();
+  }, [currency]);
 
   return <div>Coin : {coinId}</div>;
 };

@@ -6,9 +6,10 @@ import { CoinContext } from "../../context/CoinContext";
 const Coin = () => {
   const { coinId } = useParams();
   const [coinData, setCoinData] = useState();
+  const [historicalData, setHistoricalData] = useState();
   const { currency } = useContext(CoinContext);
 
-  const fetchCoinData = (async) => {
+  const fetchCoinData = async () => {
     const options = {
       method: "GET",
       headers: { "x-cg-demo-api-key": "CG-F6g5Yy3HThVYLqEtwbsqcqXF" },
@@ -17,6 +18,21 @@ const Coin = () => {
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`, options)
       .then((res) => res.json())
       .then((res) => setCoinData(res))
+      .catch((err) => console.error(err));
+  };
+
+  const fetchHistoricalData = async () => {
+    const options = {
+      method: "GET",
+      headers: { "x-cg-demo-api-key": "CG-F6g5Yy3HThVYLqEtwbsqcqXF" },
+    };
+
+    fetch(
+      "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=10",
+      options,
+    )
+      .then((res) => res.json())
+      .then((res) => setHistoricalData(res))
       .catch((err) => console.error(err));
   };
 
@@ -37,7 +53,13 @@ const Coin = () => {
         </div>
       </div>
     );
+  } else {
   }
+  return (
+    <div className="spinner">
+      <div className="spin"></div>
+    </div>
+  );
 };
 
 export default Coin;

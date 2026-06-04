@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import Chart from "react-google-charts";
 
-const LineChart = () => {
+const LineChart = ({ historicalData }) => {
+  const [data, setData] = useState([["Date", "Prices"]]);
   return <div>LineChart</div>;
 };
 

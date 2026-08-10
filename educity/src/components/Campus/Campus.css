@@ -14,3 +14,14 @@
 .gallery img {
   width: 23%;
 }
+
+/* ----- media query ----- */
+@media (max-width: 800px) {
+  .gallery {
+    flex-wrap: wrap;
+  }
+  .gallery img {
+    width: 48%;
+    margin-bottom: 25px;
+  }
+}

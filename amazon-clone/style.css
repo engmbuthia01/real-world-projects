@@ -85,9 +85,15 @@ nav {
 }
 
 .nav-text p {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .nav-text h1 {
   font-size: 14px;
+}
+
+.nav-cart {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
 }

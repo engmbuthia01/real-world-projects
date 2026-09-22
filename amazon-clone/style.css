@@ -71,3 +71,11 @@ nav {
   background: #ffd64f;
   border-radius: 0 4px 4px 0;
 }
+
+.nav-language {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: 500;
+  margin-left: 15px;
+}

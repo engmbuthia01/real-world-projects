@@ -252,3 +252,12 @@ nav {
   font-size: 15px;
   font-weight: 400;
 }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  background: #131921;
+  padding: 20px 60px;
+}

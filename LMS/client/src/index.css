@@ -1,111 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-urbanist: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --color-primary: #4f39f6;
+    --color-secondary: #27272a;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+    color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+::selection {
+    background-color: #ecfdf5;
+    color: #065f46;
 }
 
 body {
-  margin: 0;
+    font-family: var(--font-urbanist);
+    background-color: #ffffff;
+    color: #0f172a;
+    overflow-x: hidden;
+    margin: 0;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+button:hover {
+    cursor: pointer;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* --- Buttons --- */
+.btn-primary {
+    @apply w-full py-2.5 mt-2 rounded-lg bg-primary text-white font-semibold text-xs transition disabled:opacity-50;
+}
+.btn-primary-sm {
+    @apply px-4 py-1.5 rounded-md bg-primary text-white text-xs font-medium transition cursor-pointer;
+}
+.btn-pill-primary {
+    @apply px-4 py-1.5 rounded-full bg-primary text-white text-xs font-semibold;
+}
+.btn-enroll {
+    @apply w-full py-2.5 my-4 rounded-full bg-primary text-white font-semibold text-xs transition disabled:opacity-50;
+}
+.btn-preview {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-50 text-primary text-xs font-medium border border-indigo-100 hover:bg-indigo-100 transition;
+}
+.btn-cancel {
+    @apply px-4 py-1.5 rounded-full border border-zinc-200 text-xs font-medium text-secondary/80;
+}
+.btn-save {
+    @apply px-5 py-1.5 rounded-full bg-primary text-white text-xs font-medium disabled:opacity-50 cursor-pointer;
+}
+.btn-upload {
+    @apply cursor-pointer px-3.5 py-2 rounded-lg bg-white text-secondary/65 hover:bg-secondary/15 border border-zinc-200 text-xs font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap;
+}
+.btn-delete {
+    @apply p-1.5 text-secondary/45 hover:text-rose-600 rounded-md hover:bg-rose-50 transition;
+}
+.btn-cta-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white text-xs font-semibold transition cursor-pointer;
+}
+.btn-cta-outline {
+    @apply inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-50 border border-zinc-200 text-xs font-semibold transition cursor-pointer;
+}
+.btn-hero-primary {
+    @apply px-6 py-2.5 rounded-md bg-primary text-white text-xs font-semibold active:scale-95 transition cursor-pointer;
+}
+.btn-hero-outline {
+    @apply px-5 py-2.5 rounded-md bg-white border border-zinc-200 hover:bg-zinc-50 flex items-center gap-2 text-xs font-semibold active:scale-95 transition;
+}
+.btn-reset-filters {
+    @apply mt-3.5 px-3 py-1.5 rounded-lg bg-indigo-50 text-primary border border-indigo-200 text-xs font-semibold hover:bg-indigo-100 transition cursor-pointer;
+}
+.btn-icon-subtle {
+    @apply p-1 text-secondary/45 hover:text-secondary rounded-md hover:bg-secondary/15 transition;
+}
+.icon-btn {
+    @apply p-1 rounded hover:bg-secondary/15 text-secondary/65 disabled:opacity-20 transition;
+}
+.btn-nav-icon {
+    @apply p-1.5 text-secondary/45 hover:text-secondary rounded-md hover:bg-secondary/5 transition;
+}
+.btn-lessons-toggle {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-primary border border-indigo-100 text-xs font-semibold cursor-pointer;
+}
+.btn-nav-prev {
+    @apply w-8 h-8 rounded-full flex items-center justify-center bg-secondary/5 hover:bg-secondary/15 text-secondary/65 disabled:opacity-40 transition;
+}
+.btn-nav-next {
+    @apply w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white disabled:opacity-40 transition;
+}
+.btn-create-course {
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-medium text-white transition;
+}
+.btn-first-course {
+    @apply mt-5 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-semibold text-white transition;
+}
+.btn-browse-all {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50 text-xs font-medium transition;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* --- Inputs / Form fields --- */
+.input-icon {
+    @apply w-full pl-9 pr-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+}
+.field-input {
+    @apply w-full px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+}
+.field-textarea {
+    @apply w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition resize-y;
+}
+.field-input-sm {
+    @apply w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+}
+.field-select {
+    @apply w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs focus:outline-hidden focus:border-primary transition;
+}
+.composer-input {
+    @apply px-3 py-2 bg-white border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary;
+}
+.lesson-title-input {
+    @apply flex-1 px-2.5 py-1.5 bg-white border border-zinc-200 rounded-md text-xs font-medium focus:outline-hidden focus:border-primary transition;
+}
+.search-input {
+    @apply w-full pl-9 pr-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+}
+
+/* --- Cards --- */
+.course-card {
+    @apply rounded-xl bg-white border border-zinc-200 hover:border-zinc-300 overflow-hidden flex flex-col justify-between h-full transition duration-200;
+}
+.course-card-title {
+    @apply font-semibold text-base transition line-clamp-2 leading-snug mb-2;
+}
+.group:hover .course-card-title {
+    color: var(--color-primary);
+}
+.my-learning-card {
+    @apply bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 overflow-hidden flex flex-col justify-between transition;
+}
+
+/* --- Navigation --- */
+.nav-link {
+    @apply px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1.5 hover:bg-secondary/5;
+}
+.avatar-btn {
+    @apply size-9 rounded-full bg-indigo-50 border border-indigo-200 text-primary hover:bg-indigo-100 font-semibold text-xs flex items-center justify-center transition cursor-pointer;
+}
+.dropdown-menu {
+    @apply absolute right-0 top-full mt-2 w-52 rounded-xl bg-white border border-zinc-200 p-1.5 z-50;
+}
+.dropdown-item {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium hover:bg-zinc-50;
+}
+.dropdown-item-danger {
+    @apply w-full flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium text-rose-600 hover:bg-rose-50 cursor-pointer;
+}
+
+/* --- Modals --- */
+.modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-secondary/40;
+    animation: fadeIn 0.15s ease-out;
+}
+.modal-card {
+    @apply relative w-full max-w-sm p-6 overflow-hidden rounded-xl bg-white border border-zinc-200;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- Course UI --- */
+.lecture-row {
+    @apply p-3.5 rounded-lg bg-white border border-zinc-200 flex items-center justify-between hover:border-zinc-300 transition;
+}
+.lesson-row {
+    @apply p-3 rounded-lg bg-[#f8fafc] border border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs;
+}
+.video-overlay-btn {
+    @apply absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition cursor-pointer;
+}
+.play-circle {
+    @apply w-12 h-12 rounded-full bg-white flex items-center justify-center border border-white/60 transition;
+}
+.group:hover .play-circle {
+    transform: scale(1.05);
+}
+.upload-zone {
+    @apply cursor-pointer flex flex-col items-center justify-center p-8 border-2 border-dashed border-zinc-200 hover:border-primary rounded-lg bg-zinc-50 hover:bg-zinc-50/80 transition text-center;
+}
+.badge-category {
+    @apply px-3.5 py-1 text-xs font-medium rounded-full bg-indigo-50 text-primary border border-indigo-200;
+}
+.badge-level {
+    @apply px-3.5 py-1 text-xs font-medium rounded-full bg-white border border-zinc-200 text-secondary/80;
+}
+
+/* --- Player --- */
+.player-sidebar-desktop {
+    @apply hidden lg:flex w-80 xl:w-88 bg-white border-l border-zinc-200 p-5 flex-col h-full overflow-y-auto shrink-0 min-w-0;
+}
+.player-sidebar-mobile-overlay {
+    @apply relative w-full max-w-sm bg-white h-full flex flex-col p-5 overflow-y-auto border-l border-zinc-200 z-10;
+}
+
+/* --- Instructor Panel --- */
+.stat-card-icon {
+    @apply absolute right-0 top-0 flex size-12 items-center justify-center rounded-bl-xl rounded-tr-xl bg-secondary/15 text-secondary/80 transition;
+}
+.empty-state-icon-wrap {
+    @apply mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/5;
+}
+
+/* Custom modern light scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }

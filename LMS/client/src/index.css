@@ -2,242 +2,244 @@
 @import "tailwindcss";
 
 @theme {
-    --font-urbanist: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --color-primary: #4f39f6;
-    --color-secondary: #27272a;
+  --font-urbanist:
+    "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --color-primary: #4f39f6;
+  --color-secondary: #27272a;
 }
 
 :root {
-    color-scheme: light;
+  color-scheme: light;
 }
 
 html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-    background-color: #ecfdf5;
-    color: #065f46;
+  background-color: #ecfdf5;
+  color: #065f46;
 }
 
 body {
-    font-family: var(--font-urbanist);
-    background-color: #ffffff;
-    color: #0f172a;
-    overflow-x: hidden;
-    margin: 0;
+  font-family: var(--font-urbanist);
+  background-color: #ffffff;
+  color: #0f172a;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .tabular-nums {
-    font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums;
 }
 
 /* --- Buttons --- */
 .btn-primary {
-    @apply w-full py-2.5 mt-2 rounded-lg bg-primary text-white font-semibold text-xs transition disabled:opacity-50;
+  @apply w-full py-2.5 mt-2 rounded-lg bg-primary text-white font-semibold text-xs transition disabled:opacity-50;
 }
 .btn-primary-sm {
-    @apply px-4 py-1.5 rounded-md bg-primary text-white text-xs font-medium transition cursor-pointer;
+  @apply px-4 py-1.5 rounded-md bg-primary text-white text-xs font-medium transition cursor-pointer;
 }
 .btn-pill-primary {
-    @apply px-4 py-1.5 rounded-full bg-primary text-white text-xs font-semibold;
+  @apply px-4 py-1.5 rounded-full bg-primary text-white text-xs font-semibold;
 }
 .btn-enroll {
-    @apply w-full py-2.5 my-4 rounded-full bg-primary text-white font-semibold text-xs transition disabled:opacity-50;
+  @apply w-full py-2.5 my-4 rounded-full bg-primary text-white font-semibold text-xs transition disabled:opacity-50;
 }
 .btn-preview {
-    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-50 text-primary text-xs font-medium border border-indigo-100 hover:bg-indigo-100 transition;
+  @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-50 text-primary text-xs font-medium border border-indigo-100 hover:bg-indigo-100 transition;
 }
 .btn-cancel {
-    @apply px-4 py-1.5 rounded-full border border-zinc-200 text-xs font-medium text-secondary/80;
+  @apply px-4 py-1.5 rounded-full border border-zinc-200 text-xs font-medium text-secondary/80;
 }
 .btn-save {
-    @apply px-5 py-1.5 rounded-full bg-primary text-white text-xs font-medium disabled:opacity-50 cursor-pointer;
+  @apply px-5 py-1.5 rounded-full bg-primary text-white text-xs font-medium disabled:opacity-50 cursor-pointer;
 }
 .btn-upload {
-    @apply cursor-pointer px-3.5 py-2 rounded-lg bg-white text-secondary/65 hover:bg-secondary/15 border border-zinc-200 text-xs font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap;
+  @apply cursor-pointer px-3.5 py-2 rounded-lg bg-white text-secondary/65 hover:bg-secondary/15 border border-zinc-200 text-xs font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap;
 }
 .btn-delete {
-    @apply p-1.5 text-secondary/45 hover:text-rose-600 rounded-md hover:bg-rose-50 transition;
+  @apply p-1.5 text-secondary/45 hover:text-rose-600 rounded-md hover:bg-rose-50 transition;
 }
 .btn-cta-primary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white text-xs font-semibold transition cursor-pointer;
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white text-xs font-semibold transition cursor-pointer;
 }
 .btn-cta-outline {
-    @apply inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-50 border border-zinc-200 text-xs font-semibold transition cursor-pointer;
+  @apply inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-50 border border-zinc-200 text-xs font-semibold transition cursor-pointer;
 }
 .btn-hero-primary {
-    @apply px-6 py-2.5 rounded-md bg-primary text-white text-xs font-semibold active:scale-95 transition cursor-pointer;
+  @apply px-6 py-2.5 rounded-md bg-primary text-white text-xs font-semibold active:scale-95 transition cursor-pointer;
 }
 .btn-hero-outline {
-    @apply px-5 py-2.5 rounded-md bg-white border border-zinc-200 hover:bg-zinc-50 flex items-center gap-2 text-xs font-semibold active:scale-95 transition;
+  @apply px-5 py-2.5 rounded-md bg-white border border-zinc-200 hover:bg-zinc-50 flex items-center gap-2 text-xs font-semibold active:scale-95 transition;
 }
 .btn-reset-filters {
-    @apply mt-3.5 px-3 py-1.5 rounded-lg bg-indigo-50 text-primary border border-indigo-200 text-xs font-semibold hover:bg-indigo-100 transition cursor-pointer;
+  @apply mt-3.5 px-3 py-1.5 rounded-lg bg-indigo-50 text-primary border border-indigo-200 text-xs font-semibold hover:bg-indigo-100 transition cursor-pointer;
 }
 .btn-icon-subtle {
-    @apply p-1 text-secondary/45 hover:text-secondary rounded-md hover:bg-secondary/15 transition;
+  @apply p-1 text-secondary/45 hover:text-secondary rounded-md hover:bg-secondary/15 transition;
 }
 .icon-btn {
-    @apply p-1 rounded hover:bg-secondary/15 text-secondary/65 disabled:opacity-20 transition;
+  @apply p-1 rounded hover:bg-secondary/15 text-secondary/65 disabled:opacity-20 transition;
 }
 .btn-nav-icon {
-    @apply p-1.5 text-secondary/45 hover:text-secondary rounded-md hover:bg-secondary/5 transition;
+  @apply p-1.5 text-secondary/45 hover:text-secondary rounded-md hover:bg-secondary/5 transition;
 }
 .btn-lessons-toggle {
-    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-primary border border-indigo-100 text-xs font-semibold cursor-pointer;
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-primary border border-indigo-100 text-xs font-semibold cursor-pointer;
 }
 .btn-nav-prev {
-    @apply w-8 h-8 rounded-full flex items-center justify-center bg-secondary/5 hover:bg-secondary/15 text-secondary/65 disabled:opacity-40 transition;
+  @apply w-8 h-8 rounded-full flex items-center justify-center bg-secondary/5 hover:bg-secondary/15 text-secondary/65 disabled:opacity-40 transition;
 }
 .btn-nav-next {
-    @apply w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white disabled:opacity-40 transition;
+  @apply w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white disabled:opacity-40 transition;
 }
 .btn-create-course {
-    @apply inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-medium text-white transition;
+  @apply inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-medium text-white transition;
 }
 .btn-first-course {
-    @apply mt-5 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-semibold text-white transition;
+  @apply mt-5 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-semibold text-white transition;
 }
 .btn-browse-all {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50 text-xs font-medium transition;
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50 text-xs font-medium transition;
 }
 
 /* --- Inputs / Form fields --- */
 .input-icon {
-    @apply w-full pl-9 pr-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+  @apply w-full pl-9 pr-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
 }
 .field-input {
-    @apply w-full px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+  @apply w-full px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
 }
 .field-textarea {
-    @apply w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition resize-y;
+  @apply w-full px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition resize-y;
 }
 .field-input-sm {
-    @apply w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+  @apply w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
 }
 .field-select {
-    @apply w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs focus:outline-hidden focus:border-primary transition;
+  @apply w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs focus:outline-hidden focus:border-primary transition;
 }
 .composer-input {
-    @apply px-3 py-2 bg-white border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary;
+  @apply px-3 py-2 bg-white border border-zinc-200 rounded-lg text-xs placeholder-zinc-400 focus:outline-hidden focus:border-primary;
 }
 .lesson-title-input {
-    @apply flex-1 px-2.5 py-1.5 bg-white border border-zinc-200 rounded-md text-xs font-medium focus:outline-hidden focus:border-primary transition;
+  @apply flex-1 px-2.5 py-1.5 bg-white border border-zinc-200 rounded-md text-xs font-medium focus:outline-hidden focus:border-primary transition;
 }
 .search-input {
-    @apply w-full pl-9 pr-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
+  @apply w-full pl-9 pr-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs sm:text-sm placeholder-zinc-400 focus:outline-hidden focus:border-primary transition;
 }
 
 /* --- Cards --- */
 .course-card {
-    @apply rounded-xl bg-white border border-zinc-200 hover:border-zinc-300 overflow-hidden flex flex-col justify-between h-full transition duration-200;
+  @apply rounded-xl bg-white border border-zinc-200 hover:border-zinc-300 overflow-hidden flex flex-col justify-between h-full transition duration-200;
 }
 .course-card-title {
-    @apply font-semibold text-base transition line-clamp-2 leading-snug mb-2;
+  @apply font-semibold text-base transition line-clamp-2 leading-snug mb-2;
 }
 .group:hover .course-card-title {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 .my-learning-card {
-    @apply bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 overflow-hidden flex flex-col justify-between transition;
+  @apply bg-white rounded-xl border border-zinc-200 hover:border-zinc-300 overflow-hidden flex flex-col justify-between transition;
 }
 
 /* --- Navigation --- */
 .nav-link {
-    @apply px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1.5 hover:bg-secondary/5;
+  @apply px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1.5 hover:bg-secondary/5;
 }
 .avatar-btn {
-    @apply size-9 rounded-full bg-indigo-50 border border-indigo-200 text-primary hover:bg-indigo-100 font-semibold text-xs flex items-center justify-center transition cursor-pointer;
+  @apply size-9 rounded-full bg-indigo-50 border border-indigo-200 text-primary hover:bg-indigo-100 font-semibold text-xs flex items-center justify-center transition cursor-pointer;
 }
 .dropdown-menu {
-    @apply absolute right-0 top-full mt-2 w-52 rounded-xl bg-white border border-zinc-200 p-1.5 z-50;
+  @apply absolute right-0 top-full mt-2 w-52 rounded-xl bg-white border border-zinc-200 p-1.5 z-50;
 }
 .dropdown-item {
-    @apply flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium hover:bg-zinc-50;
+  @apply flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium hover:bg-zinc-50;
 }
 .dropdown-item-danger {
-    @apply w-full flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium text-rose-600 hover:bg-rose-50 cursor-pointer;
+  @apply w-full flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium text-rose-600 hover:bg-rose-50 cursor-pointer;
 }
 
 /* --- Modals --- */
 .modal-backdrop {
-    @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-secondary/40;
-    animation: fadeIn 0.15s ease-out;
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-secondary/40;
+  animation: fadeIn 0.15s ease-out;
 }
 .modal-card {
-    @apply relative w-full max-w-sm p-6 overflow-hidden rounded-xl bg-white border border-zinc-200;
+  @apply relative w-full max-w-sm p-6 overflow-hidden rounded-xl bg-white border border-zinc-200;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* --- Course UI --- */
 .lecture-row {
-    @apply p-3.5 rounded-lg bg-white border border-zinc-200 flex items-center justify-between hover:border-zinc-300 transition;
+  @apply p-3.5 rounded-lg bg-white border border-zinc-200 flex items-center justify-between hover:border-zinc-300 transition;
 }
 .lesson-row {
-    @apply p-3 rounded-lg bg-[#f8fafc] border border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs;
+  @apply p-3 rounded-lg bg-[#f8fafc] border border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs;
 }
 .video-overlay-btn {
-    @apply absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition cursor-pointer;
+  @apply absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition cursor-pointer;
 }
 .play-circle {
-    @apply w-12 h-12 rounded-full bg-white flex items-center justify-center border border-white/60 transition;
+  @apply w-12 h-12 rounded-full bg-white flex items-center justify-center border border-white/60 transition;
 }
 .group:hover .play-circle {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 .upload-zone {
-    @apply cursor-pointer flex flex-col items-center justify-center p-8 border-2 border-dashed border-zinc-200 hover:border-primary rounded-lg bg-zinc-50 hover:bg-zinc-50/80 transition text-center;
+  @apply cursor-pointer flex flex-col items-center justify-center p-8 border-2 border-dashed border-zinc-200 hover:border-primary rounded-lg bg-zinc-50 hover:bg-zinc-50/80 transition text-center;
 }
 .badge-category {
-    @apply px-3.5 py-1 text-xs font-medium rounded-full bg-indigo-50 text-primary border border-indigo-200;
+  @apply px-3.5 py-1 text-xs font-medium rounded-full bg-indigo-50 text-primary border border-indigo-200;
 }
 .badge-level {
-    @apply px-3.5 py-1 text-xs font-medium rounded-full bg-white border border-zinc-200 text-secondary/80;
+  @apply px-3.5 py-1 text-xs font-medium rounded-full bg-white border border-zinc-200 text-secondary/80;
 }
 
 /* --- Player --- */
 .player-sidebar-desktop {
-    @apply hidden lg:flex w-80 xl:w-88 bg-white border-l border-zinc-200 p-5 flex-col h-full overflow-y-auto shrink-0 min-w-0;
+  @apply hidden lg:flex w-80 xl:w-88 bg-white border-l border-zinc-200 p-5 flex-col h-full overflow-y-auto shrink-0 min-w-0;
 }
 .player-sidebar-mobile-overlay {
-    @apply relative w-full max-w-sm bg-white h-full flex flex-col p-5 overflow-y-auto border-l border-zinc-200 z-10;
+  @apply relative w-full max-w-sm bg-white h-full flex flex-col p-5 overflow-y-auto border-l border-zinc-200 z-10;
 }
 
 /* --- Instructor Panel --- */
 .stat-card-icon {
-    @apply absolute right-0 top-0 flex size-12 items-center justify-center rounded-bl-xl rounded-tr-xl bg-secondary/15 text-secondary/80 transition;
+  @apply absolute right-0 top-0 flex size-12 items-center justify-center rounded-bl-xl rounded-tr-xl bg-secondary/15 text-secondary/80 transition;
 }
 .empty-state-icon-wrap {
-    @apply mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/5;
+  @apply mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/5;
 }
 
 /* Custom modern light scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #f8fafc;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 9999px;
+  background: #cbd5e1;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+  background: #94a3b8;
 }

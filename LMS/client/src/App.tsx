@@ -18,7 +18,9 @@ const App = () => {
       className={`flex flex-col bg-white font-urbanist ${isPlayer ? "h-screen overflow-hidden" : "min-h-screen"}`}
     >
       <Toaster position="bottom-right" />
+
       <Navbar />
+
       <main
         className={`flex-1 ${isPlayer ? "h-full min-h-0 overflow-hidden" : ""}`}
       >
@@ -33,6 +35,7 @@ const App = () => {
           <Route path="/instructor/editor/:id" element={<CourseEditor />} />
         </Routes>
       </main>
+
       {!isPlayer && <Footer />}
     </div>
   );
